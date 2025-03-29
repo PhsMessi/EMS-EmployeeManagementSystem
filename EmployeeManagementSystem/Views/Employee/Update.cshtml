@@ -1,0 +1,40 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+@{
+    ViewData["Title"] = "Update Employee";
+}
+
+<form method="post" asp-action="Edit" asp-route-id="@Model.EmployeeId" class="p-4">
+    <input type="hidden" asp-for="EmployeeId" /> 
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Employee Name</label>
+        <div class="col-sm-9">
+            <input asp-for="EmployeeName" class="form-control" required placeholder="Enter name"/>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Phone number</label>
+        <div class="col-sm-9">
+            <input asp-for="Phone" class="form-control" required placeholder="Enter Phone #"/>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-9">
+            <input asp-for="Address" class="form-control" required placeholder="Enter Address"/>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Birthday</label>
+        <div class="col-sm-9">
+            <input asp-for="Birthday" class="form-control" required placeholder="Birthday"/>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Age</label>
+        <div class="col-sm-9">
+            <input asp-for="Age" class="form-control" required placeholder="Enter Age"/>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary text-white">Save Changes</button>
+</form>
+

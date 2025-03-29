@@ -1,0 +1,45 @@
+﻿@model List<EmployeeManagementSystem.Models.Employee>
+
+@{
+	ViewData["Title"] = "Tables";
+}
+
+<h1 class="text-center">Employee Table</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Work Id</th>
+			<th scope="col">Phone</th>
+			<th scope="col">Address</t>
+			<th scope="col">Birthday</th>
+			<th scope="col">Age</th>
+			<th>Update</th>
+			<th>Archive</th>
+	    <tr/>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.EmployeeName</td>
+				<td>@item.EmployeeId</td>
+				<td>@item.Phone</td>
+				<td>@item.Address</td>
+				<td>@item.Birthday</td>
+				<td>@item.Age</td>
+				<td>
+					 <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+				</td>
+				<td>
+						<form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this employee?');" style="display:inline;">
+							<button type="submit" class="btn btn-danger">Delete</button>
+					   </form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
